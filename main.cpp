@@ -2,22 +2,12 @@
 
 int main(){
 
-    int a;
-    int b;
-    //int a, b;
+    int a = 8;
+    int b = 3;
 
-    std::cout<<"Digite um valor para A: "<<std::endl;
-    std::cin>>a;
+    std::cout<<(a % b)<<std::endl;
 
-    std::cout<<"Digite um valor para B: "<<std::endl;
-    std::cin>>b;
-
-    std::cout<<(a > b)<<std::endl;
-    std::cout<<(a >= b)<<std::endl;
-    std::cout<<(a != b)<<std::endl; 
-
-// > maior que        >= maior ou igual que          != diferente de 
-
+    
 
     return 0;
 }
