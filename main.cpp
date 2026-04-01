@@ -1,19 +1,22 @@
 #include<iostream>
+#include<string>
 
 int main(){
 
-    auto num1 = 10;
-    auto num2 = 15.80f;
-    auto letra = 'E';
-    auto texto = "Leonardo";
+    //      ATIVIDADE 
 
-    std::cout<<num1<<std::endl;
-    std::cout<<num2<<std::endl;
-    std::cout<<letra<<std::endl;
-    std::cout<<texto<<std::endl;
+    int idadeAtual;
+    int anoAtual = 2026;
+    std::string primerionome;
+    std::string segundonome;
 
-
-
+    std::cout<<" Boa noite! Qual seu primeiro nome? "<<std::endl;
+    std::cin>>primerionome;
+    std::cout<<"Qual seu sobrenome? (Informe apenas o ultimo)"<<std::endl;
+    std::cin>>segundonome;
+    std::cout<<" Qual sua idade? "<<std::endl;
+    std::cin>>idadeAtual;
+    std::cout<<" Boa noite! "<<primerionome<<" "<<segundonome<<"!"<<" Voce nasceu no ano de "<<(anoAtual - idadeAtual)<<"."<<std::endl;
 
 
     return 0;
