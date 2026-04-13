@@ -4,19 +4,24 @@
 
 int main(){
 
-std::string user;
-std::string senha;
+    int idade;
 
-std::cout<<"Digite seu usuário de acesso: "<<std::endl;
-std::cin>>senha;
+    std::cout<<"Digite a sua idade: "<<std::endl;
+    std::cin>>idade;
 
-std::cout<<"Digite sua senha: "<<std::endl;
-std::cin>>senha;
-
-if(senha == "leoo"){
-    std::cout<<"O usuario "<<user<<" esta logado com sucesso!!"<<std::endl;
-}else{
-    std::cout<<"Usuario ou senha invalidos!!"<<std::endl;
-}
-
+    if(idade < 0){
+        std::cout<<"Idade inválida!"<<std::endl;
+    }else if(idade <= 2){
+        std::cout<<"Voce e um bebe!"<<std::endl;
+    }else if(idade <= 12){
+        std::cout<<"Voce e uma crianca!"<<std::endl;
+    }else if(idade <= 14){
+        std::cout<<"Voce e um pre-adolecente!"<<std::endl;
+    }else if(idade <= 17){
+        std::cout<<"Voce e um adolecente!"<<std::endl;
+    }else if(idade >= 18){
+        std::cout<<"Voce e um adulto!"<<std::endl;
+    }
+    
+    return 0;
 }
