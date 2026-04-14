@@ -1,36 +1,45 @@
 #include<iostream>
+#include<string>
 
+//Atividade, algortimo Nome, Altura, Idade, Infantil, Adolecente, Adulto. = Imprimir tudo
 
 int main(){
 
-    int opcaoPagamento;
-    int qtdParafuso;
-    float valorParafuso = 1.40;
-    float valorTotalParafuso;
-    float desconto;
-    float juros;
+    std::string nome;
+    float altura;
+    int idade;
 
-    std::cout<<"Digite a quantidade de parafusos desejada: "<<std::endl;
-    std::cin>>qtdParafuso;
+    std::cout<<"Boa noite! Qual seu nome? "<<std::endl;
+    std::cin>>nome;
 
-    valorTotalParafuso = qtdParafuso * valorParafuso;
+    std::cout<<"Qual sua altura? "<<std::endl;
+    std::cin>>altura;
 
-    std::cout<<"Qual a forma de pagamento: "<<std::endl;
-    std::cout<<"--- 1 - Pix"<<std::endl;
-    std::cout<<"--- 2 - Dinheiro"<<std::endl;
-    std::cout<<"--- 3 Cartão"<<std::endl;
-    std::cin>>opcaoPagamento;
+    std::cout<<"Qual sua idade? "<<std::endl;
+    std::cin>>idade;
 
-     if(opcaoPagamento == 1){
-         std::cout<<"Sua compra ficou no valor total de R$: "<<valorTotalParafuso<<std::endl;
-    }else if (opcaoPagamento == 2){
-        desconto = valorTotalParafuso * 0.90;
-        std::cout<<"Sua compra ficou no valor total de R$: "<<desconto<<std::endl;
-    }else if(opcaoPagamento == 3){
-        juros = valorTotalParafuso * 1.10;
-        std::cout<<"SUa compra ficou no valor total de R$: "<<juros<<std::endl;
-    }else{
-        std::cout<<"Valor invalido"<<std::endl;
+    if(idade <= 0){
+        std::cout<<"Idade inválida."<<std::endl;
+    }else if (idade <= 10){
+        std::cout<<"Boa noite! "<<nome<<"."<<std::endl;
+        std::cout<<"Sua idade = "<<idade<<" anos."<<std::endl;
+        std::cout<<"Voce se enquadra na classificacao 'Infantil'."<<std::endl;
+        std::cout<<"Sua altura = "<<altura<<"m."<<std::endl;
+    }else if (idade <= 18){
+        std::cout<<"Boa noite! "<<nome<<"."<<std::endl;
+        std::cout<<"Sua idade = "<<idade<<" anos."<<std::endl;
+        std::cout<<"Voce se enquadra na classificacao 'Adolescente'."<<std::endl;
+        std::cout<<"Sua altura = "<<altura<<"m."<<std::endl;
+    }else if(idade <= 60){
+        std::cout<<"Boa noite! "<<nome<<"."<<std::endl;
+        std::cout<<"Sua idade = "<<idade<<" anos."<<std::endl;
+        std::cout<<"Voce se enquadra na classificacao 'Adulto'."<<std::endl;
+        std::cout<<"Sua altura = "<<altura<<"m."<<std::endl;
+    }else if(idade >= 61){
+        std::cout<<"Boa noite! "<<nome<<"."<<std::endl;
+        std::cout<<"Sua idade = "<<idade<<" anos."<<std::endl;
+        std::cout<<"Voce se enquadra na classificacao 'Idoso'."<<std::endl;
+        std::cout<<"Sua altura = "<<altura<<"m."<<std::endl;
     }
 
     return 0;
