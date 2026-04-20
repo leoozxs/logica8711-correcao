@@ -2,18 +2,12 @@
 #include <string>
 
 int main(){
-
-    int numero[5] = {10, 20, 30, 40, 50};
-
-    int tamanho = std::size(numero);
-
-    for(int i = 0; i < tamanho; i++){
-        std::cout<<numero[3]<<std::endl;
-    }
-
-
     
+    std::string carros[5] = {"Volvo", "BMW", "Ford", "Chevrolet", "Fiat"};
 
- 
+    int tamanho = sizeof(carros) / sizeof(carros[0]);
+
+    std::cout<<tamanho<<std::endl;
+
     return 0;
 }
