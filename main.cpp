@@ -1,16 +1,14 @@
 #include <iostream>
-#include <string>
 
 int main(){
     
-    int contagem = 10;
-
-    while(contagem > 0){
-        std::cout<<contagem<<std::endl;
-        contagem--;
+    for(int i = 0; i < 10; i++ ){
+        if(i == 4){
+            break;
+        }
+        std::cout<<i<<std::endl;
     }
 
-    std::cout<<"Feliz ano novo!!"<<std::endl;
     return 0;
 }
-
+ 
