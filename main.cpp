@@ -1,30 +1,30 @@
 #include <iostream>
-
-bool ehPrimo(int numero){
-    if(numero <= 1){
-        return false;
-}   
-
-    for(int i = 2; i < numero; i++){
-        if(numero % i == 0){
-            return false;
-        }
-    }
-    return true;
-}
+#include <tuple>
+#include <string>
 
 int main(){
 
-    int numero;
-    
-    std::cout<<"Digite um numero: "<<std::endl;
-    std::cin>>numero;
+    std::string nome;
+    int idade;
+    double altura;
+     
+     std::cout<<"Digite o seu nome: "<<std::endl;
+     std::getline(std::cin, nome);
 
-    if(ehPrimo(numero)){
-        std::cout<<numero<<" e primo!"<<std::endl;
-    }else{
-        std::cout<<numero<<" nao e primo!"<<std::endl;
-    }
+     std::cout<<"Digite a sua idade: "<<std::endl;
+     std::cin>>idade;
+
+     std::cout<<"Digite a sua altura: "<<std::endl;
+     std::cin>>altura;
+
+     std::tuple<std::string, int, double> pessoa = std::make_tuple(nome, idade, altura);
+
+     std::cout<<"\n ----- Dados salvos na Tupla -----"<<std::endl;
+
+     std::cout<<"Nome: "<<std::get<0>(pessoa)<<std::endl;
+     std::cout<<"Idade: "<<std::get<1>(pessoa)<<" anos."<<std::endl;
+     std::cout<<"Altura: "<<std::get<2>(pessoa)<<"m."<<std::endl;
+    
 
     return 0;
 }
