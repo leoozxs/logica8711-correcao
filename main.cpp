@@ -4,17 +4,28 @@
 
 
 int fibonacci(int n){
-    if(n == 0) return 0;
-    if(n == 1) return 1;
+    std::cout<<"Calculando fib("<< n<<")"<<std::endl;
 
-    return fibonacci(n - 1) + fibonacci(n - 2);
+    if(n == 0){
+        std::cout<<"Fib(0) = o (PARADA)"<<std::endl;
+        return 0;
+    }
+    if(n == 1){
+        std::cout<<"Fib(1) = 1 (PARADA!)"<<std::endl;
+        return 1;
+    }
+
+    std::cout<<"Fib("<<n<<") = Fib("<<(n-1)<<") + fib("<<(n-2)<<")\n";
+    int resultado = fibonacci(n - 1) + fibonacci(n - 2);
+    std::cout<<"Fib("<<n<<") = "<<resultado<<std::endl;
+    return resultado;
 }
 
 
 int main(){
 
-    std::cout<<fibonacci(7)<<std::endl;
+    fibonacci(4);
 
     return 0;
 }
-  // 0,1,1,2,3,5,8
+  // 0,1,1,2,3,5,8,13
