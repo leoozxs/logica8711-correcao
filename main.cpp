@@ -1,31 +1,33 @@
 #include <iostream>
-#include <tuple>
-#include <string>
 
 
-int fibonacci(int n){
-    std::cout<<"Calculando fib("<< n<<")"<<std::endl;
-
-    if(n == 0){
-        std::cout<<"Fib(0) = o (PARADA)"<<std::endl;
-        return 0;
-    }
-    if(n == 1){
-        std::cout<<"Fib(1) = 1 (PARADA!)"<<std::endl;
-        return 1;
+void tabuada(int numero, int multiplicador){
+    if (multiplicador == 0){
+        return;
     }
 
-    std::cout<<"Fib("<<n<<") = Fib("<<(n-1)<<") + fib("<<(n-2)<<")\n";
-    int resultado = fibonacci(n - 1) + fibonacci(n - 2);
-    std::cout<<"Fib("<<n<<") = "<<resultado<<std::endl;
-    return resultado;
+    tabuada(numero, multiplicador -1);
+
+    std::cout<<numero<<" x "<<multiplicador<<" = "<<(numero * multiplicador)<<std::endl;
+
 }
 
 
 int main(){
 
-    fibonacci(4);
+    int numero;
+    int multiplicador;
+
+    std::cout<<"Digite o numero inteiro: "<<std::endl;
+    std::cin>>numero;
+
+    std::cout<<"Digite o multiplicador: "<<std::endl;
+    std::cin>>multiplicador;
+
+    tabuada(numero, multiplicador);
+
+
+    
 
     return 0;
 }
-  // 0,1,1,2,3,5,8,13
