@@ -1,33 +1,34 @@
 #include <iostream>
+#include <string>
+#include <cctype>
 
+bool ehPalindromo(std:: string s){
+    int inicio = 0;
+    int fim = s.length() - 1;
 
-void tabuada(int numero, int multiplicador){
-    if (multiplicador == 0){
-        return;
+    while(inicio < fim){
+        if(s[inicio] != s [fim]){
+            return false;
+        }
+        inicio++;
+        fim--;
     }
-
-    tabuada(numero, multiplicador -1);
-
-    std::cout<<numero<<" x "<<multiplicador<<" = "<<(numero * multiplicador)<<std::endl;
-
+    return true;
 }
+
 
 
 int main(){
 
-    int numero;
-    int multiplicador;
+    std::string palindromoInserido;
 
-    std::cout<<"Digite o numero inteiro: "<<std::endl;
-    std::cin>>numero;
+    std::cout<<"Insira o palindromo"<<std::endl;
+    std::cin>>palindromoInserido;
 
-    std::cout<<"Digite o multiplicador: "<<std::endl;
-    std::cin>>multiplicador;
+    std::cout<<palindromoInserido<<std::endl;
 
-    tabuada(numero, multiplicador);
+    std::cout<<ehPalindromo(palindromoInserido)<<std::endl;
 
-
-    
 
     return 0;
 }
