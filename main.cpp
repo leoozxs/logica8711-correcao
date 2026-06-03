@@ -1,34 +1,23 @@
 #include <iostream>
 #include <string>
-#include <cctype>
 
-bool ehPalindromo(std:: string s){
-    int inicio = 0;
-    int fim = s.length() - 1;
+struct Aluno{
+    std::string nome;
+    float nota1;
+    float nota2;
+};
 
-    while(inicio < fim){
-        if(s[inicio] != s [fim]){
-            return false;
-        }
-        inicio++;
-        fim--;
-    }
-    return true;
+float calcularMediaAluno(Aluno a){
+    return (a.nota1 + a.nota2) / 2;
 }
 
-
-
 int main(){
+    
+    Aluno aluno = {"Paulo", 8.0, 9.5};
 
-    std::string palindromoInserido;
+    float media =  calcularMediaAluno(aluno);
 
-    std::cout<<"Insira o palindromo"<<std::endl;
-    std::cin>>palindromoInserido;
-
-    std::cout<<palindromoInserido<<std::endl;
-
-    std::cout<<ehPalindromo(palindromoInserido)<<std::endl;
-
+    std::cout<< aluno.nome<<" - Media: "<<media<<std::endl;
 
     return 0;
 }
