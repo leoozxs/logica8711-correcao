@@ -1,32 +1,65 @@
 #include <iostream>
 
-void buubleSort(int* arr, int tamanho){
-    for(int i = 0; i < tamanho - 1; i++){
-        for(int j = 0; j < tamanho - i - 1; j++){
-            if(arr[j] > arr[j + 1]){
-                int temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
-        }
-    }
-}
 
 int main(){
-    
-    int arr[] = {64, 34, 25, 12, 22, 11, 90};
-    int tamanho = std::size(arr);
-    std::cout<<"Array original"<<std::endl;
-    for(int i = 0; i < tamanho; i++){
-        std::cout<<arr[i]<<" ";
-    }
-    std::cout<<"\n";
 
-    buubleSort(arr, tamanho);
-    std::cout<<"Array ordenado: ";
-    for(int i = 0; i < tamanho; i++){
-        std::cout<<arr[i]<<" ";
+    std::string palavra = "programacao";
+    std::string adivinhada = "";
+    int erros = 0;
+    int maxErros = 6;
+    bool ganhou = false;
+
+    for(int i = 0; i < palavra.length(); i++){
+        adivinhada += "_";
     }
-    std::cout<<"\n";
+
+    std::cout<<"==== JOGO DA FORCA ===="<<std::endl;
+    std::cout<<"Adivinhe a palavra!"<<std::endl;
+    std::cout<<std::endl;
+
+    while (erros < maxErros && !ganhou){
+        std::cout<<"Palavra: ";
+        for(int i = 0; i < adivinhada.length(); i++){
+            std::cout<<adivinhada[i]<<" ";
+        }
+        std::cout<<std::endl;
+        std::cout<<"Erros: "<<erros<<"/"<<maxErros<<std::endl;
+        std::cout<<std::endl;
+
+        char letra;
+        std::cout<<"Digite uma letra: ";
+        std::cin>>letra;
+        letra = std::tolower(letra);
+
+        std::cout<<std::endl;
+
+        bool encontrou = false;
+
+        for(int i = 0; i < palavra.length(); i++){
+            if(palavra[i] == letra){
+                adivinhada[i] = letra;
+                encontrou = true;
+            }
+        }
+        if(!encontrou){
+            std::cout<<"Letra errada!"<<std::endl;
+        }else{
+            std::cout<<"Letra encontrada!"<<std::endl;
+        }
+        std::cout<<std::endl;
+
+        if(adivinhada == palavra){
+            ganhou = true;
+        }
+    }
+    std::cout<<"======="<<std::endl;
+    if(ganhou){
+        std::cout<<"Parabens! Voce venceu!"<<std::endl;
+        std::cout<<"A palavra era: "<<palavra<<std::endl;
+    }else{
+        std::cout<<"Game over! Voce perdeu!"<<std::endl;
+        std::cout<<"A palavra era: "<<palavra<<std::endl;
+    }
+
     return 0;
 }
