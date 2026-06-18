@@ -1,65 +1,34 @@
 #include <iostream>
-
+#include <string>
 
 int main(){
+    std::string time1, time2;
+    int gols1, gols2;
 
-    std::string palavra = "programacao";
-    std::string adivinhada = "";
-    int erros = 0;
-    int maxErros = 6;
-    bool ganhou = false;
-
-    for(int i = 0; i < palavra.length(); i++){
-        adivinhada += "_";
-    }
-
-    std::cout<<"==== JOGO DA FORCA ===="<<std::endl;
-    std::cout<<"Adivinhe a palavra!"<<std::endl;
+    std::cout<<"===== COMPARADOR DE PLACAR ====="<<std::endl;
     std::cout<<std::endl;
 
-    while (erros < maxErros && !ganhou){
-        std::cout<<"Palavra: ";
-        for(int i = 0; i < adivinhada.length(); i++){
-            std::cout<<adivinhada[i]<<" ";
-        }
-        std::cout<<std::endl;
-        std::cout<<"Erros: "<<erros<<"/"<<maxErros<<std::endl;
-        std::cout<<std::endl;
+    std::cout<<"Time 1: ";
+    std::cin>>time1;
+    std::cout<<"Gols time 1: ";
+    std::cin>>gols1;
 
-        char letra;
-        std::cout<<"Digite uma letra: ";
-        std::cin>>letra;
-        letra = std::tolower(letra);
+    std::cout<<"Time 2: ";
+    std::cin>>time2;
+    std::cout<<"Gols time 2: ";
+    std::cin>>gols2;
 
-        std::cout<<std::endl;
+    std::cout<<"\n===== RESULTADO ====="<<std::endl;
+    std::cout<<time1<<" "<<gols1<<" x "<<gols2<<" "<<time2<<std::endl;
 
-        bool encontrou = false;
-
-        for(int i = 0; i < palavra.length(); i++){
-            if(palavra[i] == letra){
-                adivinhada[i] = letra;
-                encontrou = true;
-            }
-        }
-        if(!encontrou){
-            std::cout<<"Letra errada!"<<std::endl;
-        }else{
-            std::cout<<"Letra encontrada!"<<std::endl;
-        }
-        std::cout<<std::endl;
-
-        if(adivinhada == palavra){
-            ganhou = true;
-        }
-    }
-    std::cout<<"======="<<std::endl;
-    if(ganhou){
-        std::cout<<"Parabens! Voce venceu!"<<std::endl;
-        std::cout<<"A palavra era: "<<palavra<<std::endl;
+    if(gols1 == gols2){
+        std::cout<<"EMPATE!!";
+    }else if(gols1 > gols2){
+        std::cout<<time1<<" Venceu!!!"<<std::endl;
     }else{
-        std::cout<<"Game over! Voce perdeu!"<<std::endl;
-        std::cout<<"A palavra era: "<<palavra<<std::endl;
+        std::cout<<time2<<" Venceu!!"<<std::endl;
     }
+
 
     return 0;
 }
