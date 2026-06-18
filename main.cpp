@@ -1,34 +1,25 @@
 #include <iostream>
-#include <string>
 
 int main(){
-    std::string time1, time2;
-    int gols1, gols2;
+    int jogos;
 
-    std::cout<<"===== COMPARADOR DE PLACAR ====="<<std::endl;
-    std::cout<<std::endl;
+    std::cout<<"===== Calculador de público ====="<<std::endl;
+    std::cout<<"\nQuantos jogos:";
+    std::cin>>jogos;
 
-    std::cout<<"Time 1: ";
-    std::cin>>time1;
-    std::cout<<"Gols time 1: ";
-    std::cin>>gols1;
+    int somaPublico = 0;
 
-    std::cout<<"Time 2: ";
-    std::cin>>time2;
-    std::cout<<"Gols time 2: ";
-    std::cin>>gols2;
+    for(int i = 1; i <= jogos; i++){
+        int publico;
+        std::cout<<"Publico jogo "<<i<<": ";
+        std::cin>>publico;
+        somaPublico += publico;
+    }
+    
+    int media = somaPublico / jogos;
 
     std::cout<<"\n===== RESULTADO ====="<<std::endl;
-    std::cout<<time1<<" "<<gols1<<" x "<<gols2<<" "<<time2<<std::endl;
+    std::cout<<"Media de publico: "<<media<<" pessoas"<<std::endl;
+    std::cout<<"Total de público: "<<somaPublico<<" pessoas"<<std::endl;
 
-    if(gols1 == gols2){
-        std::cout<<"EMPATE!!";
-    }else if(gols1 > gols2){
-        std::cout<<time1<<" Venceu!!!"<<std::endl;
-    }else{
-        std::cout<<time2<<" Venceu!!"<<std::endl;
-    }
-
-
-    return 0;
 }
