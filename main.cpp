@@ -4,17 +4,26 @@
 int main(){
  
     std::vector<int>numeros;
- 
-    std::cout<<"===== VECTOR (Arraylist em C++) ====="<<std::endl;
- 
+
+    std::cout<<"===== Remover elemento espeífico ====="<<std::endl;
+
     numeros.push_back(10);
     numeros.push_back(20);
     numeros.push_back(30);
- 
-    std::cout<<"Numeros: ";
+    numeros.push_back(40);
+
+    std::cout<<"Antes ";
     for(int i = 0; i < numeros.size(); i++){
         std::cout<<numeros[i]<<" ";
     }
- 
+    std::cout<<std::endl;
+
+    numeros.erase(numeros.begin());
+
+    std::cout<<"Depois: ";
+    for(int i = 0; i < numeros.size(); i++){
+        std::cout<<numeros[i]<<" ";
+    }
+
     return 0;
 }
