@@ -5,25 +5,19 @@ int main(){
  
     std::vector<int>numeros;
 
-    std::cout<<"===== Remover elemento espeífico ====="<<std::endl;
+    std::cout<<"===== Limpar vector ====="<<std::endl;
 
     numeros.push_back(10);
     numeros.push_back(20);
     numeros.push_back(30);
-    numeros.push_back(40);
+    
+    std::cout<<"Tamanho antes: "<<numeros.size()<<std::endl;
 
-    std::cout<<"Antes ";
-    for(int i = 0; i < numeros.size(); i++){
-        std::cout<<numeros[i]<<" ";
-    }
-    std::cout<<std::endl;
+    numeros.clear();
 
-    numeros.erase(numeros.begin());
+    std::cout<<"Tamanho Depoius: "<<numeros.size()<<std::endl;
+    std::cout<<"Vector vazio?"<<(numeros.empty() ? "Sim" : "Não")<<std::endl;
 
-    std::cout<<"Depois: ";
-    for(int i = 0; i < numeros.size(); i++){
-        std::cout<<numeros[i]<<" ";
-    }
 
     return 0;
 }
