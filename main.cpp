@@ -4,26 +4,30 @@
 int main(){
  
     std::vector<int>numeros;
-
-    std::cout<<"===== Soma e retorna ====="<<std::endl;
-
+ 
+    std::cout<<"Contar ocorrências: "<<std::endl;
+ 
+    numeros.push_back(5);
     numeros.push_back(10);
-    numeros.push_back(20);
-    numeros.push_back(30);
-    numeros.push_back(40);
-    int soma = 0;
-
-    for(int i = 0; i < 4; i++){
-        soma += numeros[i];
+    numeros.push_back(5);
+    numeros.push_back(15);
+    numeros.push_back(15);
+    numeros.push_back(5);
+    numeros.push_back(15);
+ 
+    std::cout<<"Vector: ";
+    for(int i = 0; i < numeros.size(); i++){
+        std::cout<<numeros[i]<<" ";
     }
-    std::cout<<"[ ";
-    for (int n : numeros) {
-    std::cout << n << " ";
+ 
+    int contador = 0;
+    for(int i = 0; i < numeros.size(); i++){
+        if(numeros[i] == 5){
+            contador++;
+        }
     }
-    std::cout<<"]";
-    std::cout<<"\n"<<soma<<std::endl;
-    
-
-
+    std::cout<<"O número 5 aparece: "<<contador<<" vezes!"<<std::endl;
+ 
     return 0;
 }
+ 
