@@ -4,33 +4,30 @@
 int main(){
  
     std::vector<int>numeros;
- 
-    std::cout<<"Contar ocorrências: "<<std::endl;
- 
-    numeros.push_back(100);
-    numeros.push_back(200);
-    numeros.push_back(300);
-    numeros.push_back(400);
 
-    std::cout<<"Vector: ";
+    numeros.push_back(5);
+    numeros.push_back(10);
+    numeros.push_back(15);
+    numeros.push_back(20);
+    numeros.push_back(25);
+
+    std::cout<<"Vetor: [ ";
     for(int i = 0; i < numeros.size(); i++){
         std::cout<<numeros[i]<<" ";
     }
-    int buscado = 300;
-    int posicao = -1;
-
+    std::cout<<"]"<<std::endl;
+    std::cout<<"Pares: ";
     for(int i = 0; i < numeros.size(); i++){
-        if(numeros[i] == buscado){
-            posicao = i;
-            break;
+        if(numeros[i] % 2 == 0){
+            std::cout<<numeros[i]<<" ";
         }
     }
-    if(posicao != -1){
-        std::cout<<"Numero "<<buscado<<" encontrado na posiçao "<<posicao<<std::endl;
-    }else{
-        std::cout<<"Numero não encontrado"<<std::endl;
-    }
 
+    std::cout<<"\nImpares: ";
+    for(int i = 0; i < numeros.size(); i++){
+        if(numeros[i] % 2 != 0){
+            std::cout<<numeros[i]<<" ";
+        }
+    }
     return 0;
 }
- 
